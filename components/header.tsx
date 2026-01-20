@@ -16,7 +16,7 @@ export function Header() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/30">
             <Shield className="h-5 w-5 text-primary" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">ISA</span>
+          <span className="text-xl font-bold tracking-tight text-foreground">ISA (Inteligent Sensitive Anonymizer)</span>
         </Link>
 
         {/* Desktop Navigation */}

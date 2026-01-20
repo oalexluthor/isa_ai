@@ -16,13 +16,13 @@ export function Header() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/30">
             <Shield className="h-5 w-5 text-primary" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">ISA (Inteligent Sensitive Anonymizer)</span>
+          <span className="text-xl font-bold tracking-tight text-foreground">ISA (Information Sensitive Anonymizer)</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           <Link
-            href="#docs"
+            href="/docs"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             Documentação

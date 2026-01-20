@@ -43,7 +43,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-8 border-t border-border/50 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            {'© '}{new Date().getFullYear()}{' ISA - Intelligent Sensitive Anonymizer. Open source under MIT License.'}
+            {'© '}{new Date().getFullYear()}{' ISA - Information Sensitive Anonymizer. Open source under MIT License.'}
           </p>
         </div>
       </div>

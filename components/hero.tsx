@@ -23,22 +23,22 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
-          Open Source Privacy Guardrail
+          Guardrail de Privacidade Open Source
         </div>
 
         {/* Headline */}
         <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-          Shield Your Prompts.{" "}
+          Proteja seus Prompts.{" "}
           <span className="bg-gradient-to-r from-primary to-emerald-300 bg-clip-text text-transparent">
-            Deploy LLMs with Confidence.
+            Use LLMs com Confiança.
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          The lightweight{" "}
-          <span className="font-mono text-primary">(270M)</span> AI Guardrail that anonymizes
-          sensitive data locally before it ever leaves your infrastructure.
+          ISA é um Guardrail de IA ultra-leve{" "}
+          <span className="font-mono text-primary">(270M)</span> que anonimiza
+          dados sensíveis localmente antes mesmo de saírem da sua infraestrutura.
         </p>
 
         {/* CTAs */}
@@ -50,7 +50,7 @@ export function Hero() {
           >
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
-              View on GitHub
+              Ver no GitHub
             </a>
           </Button>
           <Button
@@ -61,7 +61,7 @@ export function Hero() {
           >
             <a href="#download">
               <Download className="h-5 w-5" />
-              Download GGUF/LoRA
+              Baixar GGUF/LoRA
             </a>
           </Button>
         </div>
@@ -70,15 +70,15 @@ export function Hero() {
         <div className="mt-16 flex flex-wrap items-center justify-center gap-8 border-t border-border/50 pt-8 md:gap-16">
           <div className="text-center">
             <div className="text-3xl font-bold text-foreground">270M</div>
-            <div className="text-sm text-muted-foreground">Parameters</div>
+            <div className="text-sm text-muted-foreground">Parâmetros</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-foreground">{"<"}50ms</div>
-            <div className="text-sm text-muted-foreground">Latency</div>
+            <div className="text-sm text-muted-foreground">Latência</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-primary">100%</div>
-            <div className="text-sm text-muted-foreground">Local Processing</div>
+            <div className="text-sm text-muted-foreground">Processamento Local</div>
           </div>
         </div>
       </div>

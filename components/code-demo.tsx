@@ -1,37 +1,67 @@
-import { ArrowRight } from "lucide-react"
+"use client"
 
-const inputCode = `{
-  "message": "Process refund for John Smith",
+import { ArrowRight, Code2, MessageSquareText } from "lucide-react"
+import { useState } from "react"
+
+const examples = {
+  json: {
+    title: "Estrutura de API (JSON)",
+    input: `{
+  "action": "refund_request",
   "customer": {
-    "name": "John Smith",
-    "ssn": "123-45-6789",
-    "email": "john.smith@email.com"
+    "name": "Carlos Oliveira",
+    "cpf": "123.456.789-00",
+    "email": "carlos.oliver@gmail.com"
   },
-  "amount": 299.99
-}`
-
-const outputCode = `{
-  "message": "Process refund for [PERSON_01]",
+  "amount": 1500.00
+}`,
+    output: `{
+  "action": "refund_request",
   "customer": {
-    "name": "[PERSON_01]",
-    "ssn": "[DOC_ID_01]",
+    "name": "[PESSOA_01]",
+    "cpf": "[DOC_ID_01]",
     "email": "[EMAIL_01]"
   },
-  "amount": 299.99
+  "amount": 1500.00
 }`
+  },
+  text: {
+    title: "Texto em Prosa (Chat)",
+    input: "Olá, meu nome é Carlos Oliveira e gostaria de atualizar meu endereço. Moro na Rua das Flores, 123, São Paulo. Meu CPF é 123.456.789-00 e meu telefone é (11) 98888-7777.",
+    output: "Olá, meu nome é [PESSOA_01] e gostaria de atualizar meu endereço. Moro na [ENDERECO_01]. Meu CPF é [DOC_ID_01] e meu telefone é [TELEFONE_01]."
+  }
+}
 
 export function CodeDemo() {
+  const [activeTab, setActiveTab] = useState<"json" | "text">("json")
+
   return (
     <section className="bg-muted/30 px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            See It In Action
+            Veja em Ação
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Watch how ISA transforms sensitive data into safe, anonymized tokens in real-time.
+            Observe como a ISA transforma dados sensíveis em tokens seguros em tempo real, preservando o contexto para a LLM.
           </p>
+        </div>
+
+        {/* Tab Switcher */}
+        <div className="mb-8 flex justify-center gap-4">
+          <button
+            onClick={() => setActiveTab("json")}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all ${activeTab === "json" ? "bg-primary text-primary-foreground shadow-lg" : "bg-secondary text-muted-foreground hover:bg-secondary/80"}`}
+          >
+            <Code2 className="h-4 w-4" /> JSON Data
+          </button>
+          <button
+            onClick={() => setActiveTab("text")}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all ${activeTab === "text" ? "bg-primary text-primary-foreground shadow-lg" : "bg-secondary text-muted-foreground hover:bg-secondary/80"}`}
+          >
+            <MessageSquareText className="h-4 w-4" /> Texto Simples
+          </button>
         </div>
 
         {/* Code Comparison */}
@@ -40,48 +70,20 @@ export function CodeDemo() {
           <div className="relative">
             <div className="mb-3 flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-red-500/80" />
-              <span className="text-sm font-medium text-red-400">Original Input</span>
+              <span className="text-sm font-medium text-red-400">Entrada Original</span>
               <span className="ml-auto rounded bg-red-500/10 px-2 py-0.5 text-xs text-red-400">
-                Contains PII
+                Contém PII
               </span>
             </div>
-            <div className="overflow-hidden rounded-xl border border-red-500/20 bg-slate-950">
-              {/* Terminal Header */}
+            <div className="min-h-[300px] overflow-hidden rounded-xl border border-red-500/20 bg-slate-950">
               <div className="flex items-center gap-2 border-b border-slate-800 bg-slate-900/80 px-4 py-3">
-                <div className="h-3 w-3 rounded-full bg-red-500" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                <div className="h-3 w-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-xs text-slate-500">user_prompt.json</span>
+                <span className="text-xs text-slate-500 font-mono">input.{activeTab === "json" ? "json" : "txt"}</span>
               </div>
-              {/* Code */}
-              <pre className="overflow-x-auto p-4 text-sm leading-relaxed">
+              <pre className="overflow-x-auto p-4 text-sm leading-relaxed whitespace-pre-wrap">
                 <code className="font-mono text-slate-300">
-                  {inputCode.split("\n").map((line, i) => (
-                    <div key={i} className="flex">
-                      <span className="mr-4 select-none text-slate-600">{i + 1}</span>
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: highlightSensitive(line),
-                        }}
-                      />
-                    </div>
-                  ))}
+                  <span dangerouslySetInnerHTML={{ __html: highlightSensitive(examples[activeTab].input) }} />
                 </code>
               </pre>
-            </div>
-          </div>
-
-          {/* Arrow (Desktop) */}
-          <div className="hidden items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:flex lg:-translate-x-1/2 lg:-translate-y-1/2">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/30 bg-primary/10 shadow-lg shadow-primary/20">
-              <ArrowRight className="h-5 w-5 text-primary" />
-            </div>
-          </div>
-
-          {/* Arrow (Mobile) */}
-          <div className="flex items-center justify-center lg:hidden">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
-              <ArrowRight className="h-4 w-4 rotate-90 text-primary" />
             </div>
           </div>
 
@@ -89,32 +91,18 @@ export function CodeDemo() {
           <div className="relative">
             <div className="mb-3 flex items-center gap-2">
               <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
-              <span className="text-sm font-medium text-emerald-400">Anonymized Output</span>
+              <span className="text-sm font-medium text-emerald-400">Saída Anonimizada</span>
               <span className="ml-auto rounded bg-emerald-500/10 px-2 py-0.5 text-xs text-emerald-400">
-                Safe to Send
+                Seguro para Enviar
               </span>
             </div>
-            <div className="overflow-hidden rounded-xl border border-emerald-500/20 bg-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
-              {/* Terminal Header */}
+            <div className="min-h-[300px] overflow-hidden rounded-xl border border-emerald-500/20 bg-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
               <div className="flex items-center gap-2 border-b border-slate-800 bg-slate-900/80 px-4 py-3">
-                <div className="h-3 w-3 rounded-full bg-red-500" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                <div className="h-3 w-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-xs text-slate-500">anonymized_prompt.json</span>
+                <span className="text-xs text-slate-500 font-mono">output.{activeTab === "json" ? "json" : "txt"}</span>
               </div>
-              {/* Code */}
-              <pre className="overflow-x-auto p-4 text-sm leading-relaxed">
+              <pre className="overflow-x-auto p-4 text-sm leading-relaxed whitespace-pre-wrap">
                 <code className="font-mono text-slate-300">
-                  {outputCode.split("\n").map((line, i) => (
-                    <div key={i} className="flex">
-                      <span className="mr-4 select-none text-slate-600">{i + 1}</span>
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: highlightAnonymized(line),
-                        }}
-                      />
-                    </div>
-                  ))}
+                  <span dangerouslySetInnerHTML={{ __html: highlightAnonymized(examples[activeTab].output) }} />
                 </code>
               </pre>
             </div>
@@ -124,16 +112,16 @@ export function CodeDemo() {
         {/* Legend */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
           <div className="flex items-center gap-2">
-            <span className="rounded bg-red-500/20 px-2 py-0.5 font-mono text-xs text-red-400">
-              PII
+            <span className="rounded bg-red-500/20 px-2 py-0.5 font-mono text-xs text-red-400 font-bold">
+              DADOS SENSÍVEIS
             </span>
-            <span className="text-muted-foreground">Sensitive data detected</span>
+            <span className="text-muted-foreground">Risco de vazamento detectado</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-xs text-emerald-400">
-              [TOKEN]
+            <span className="rounded bg-emerald-500/20 px-2 py-0.5 font-mono text-xs text-emerald-400 font-bold">
+              [TOKEN_SEGURO]
             </span>
-            <span className="text-muted-foreground">Anonymized placeholder</span>
+            <span className="text-muted-foreground">Substituição neural preservando o contexto</span>
           </div>
         </div>
       </div>
@@ -141,31 +129,32 @@ export function CodeDemo() {
   )
 }
 
-function highlightSensitive(line: string): string {
+function highlightSensitive(text: string): string {
   const sensitivePatterns = [
-    { pattern: /"John Smith"/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
-    { pattern: /"123-45-6789"/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
-    {
-      pattern: /"john\.smith@email\.com"/g,
-      className: "text-red-400 bg-red-500/10 px-1 rounded",
-    },
+    { pattern: /Carlos Oliveira/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
+    { pattern: /123\.456\.789-00/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
+    { pattern: /carlos\.oliver@gmail\.com/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
+    { pattern: /Rua das Flores, 123, São Paulo/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
+    { pattern: /\(11\) 98888-7777/g, className: "text-red-400 bg-red-500/10 px-1 rounded" },
   ]
 
-  let result = escapeHtml(line)
+  let result = escapeHtml(text)
   sensitivePatterns.forEach(({ pattern, className }) => {
     result = result.replace(pattern, (match) => `<span class="${className}">${match}</span>`)
   })
   return result
 }
 
-function highlightAnonymized(line: string): string {
+function highlightAnonymized(text: string): string {
   const tokenPatterns = [
-    { pattern: /\[PERSON_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded" },
-    { pattern: /\[DOC_ID_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded" },
-    { pattern: /\[EMAIL_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded" },
+    { pattern: /\[PESSOA_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded font-bold" },
+    { pattern: /\[DOC_ID_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded font-bold" },
+    { pattern: /\[EMAIL_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded font-bold" },
+    { pattern: /\[ENDERECO_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded font-bold" },
+    { pattern: /\[TELEFONE_01\]/g, className: "text-emerald-400 bg-emerald-500/10 px-1 rounded font-bold" },
   ]
 
-  let result = escapeHtml(line)
+  let result = escapeHtml(text)
   tokenPatterns.forEach(({ pattern, className }) => {
     result = result.replace(pattern, (match) => `<span class="${className}">${match}</span>`)
   })

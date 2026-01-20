@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-
 import { useEffect, useRef, useState } from "react"
 import { Zap, Brain, Cpu } from "lucide-react"
 
@@ -122,15 +121,15 @@ export function Benchmarks() {
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Why{" "}
+            Por que{" "}
             <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
-              270M Parameters
+              270M de Parâmetros
             </span>
             ?
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            The perfect balance between Regex speed and LLM intelligence. Ultra-low latency for
-            real-time applications.
+            O equilíbrio ideal entre a velocidade de um Regex e a inteligência de uma LLM. 
+            Latência ultra-baixa para aplicações em tempo real.
           </p>
         </div>
 
@@ -139,24 +138,24 @@ export function Benchmarks() {
           {/* Latency Card */}
           <BenchmarkCard
             icon={<Zap className="h-5 w-5" />}
-            title="Latency"
-            description="Lower is better"
+            title="Latência"
+            description="Quanto menor, melhor"
             isVisible={isVisible}
           >
             <BenchmarkBar
               label="ISA (270M)"
-              value={45}
+              value={48}
               maxValue={1200}
-              displayValue="45ms"
+              displayValue="48ms"
               isHero
               isVisible={isVisible}
               delay={200}
             />
             <BenchmarkBar
               label="Llama-3 (8B)"
-              value={450}
+              value={520}
               maxValue={1200}
-              displayValue="450ms"
+              displayValue="520ms"
               isVisible={isVisible}
               delay={400}
             />
@@ -164,7 +163,7 @@ export function Benchmarks() {
               label="GPT-4 (API)"
               value={1200}
               maxValue={1200}
-              displayValue="1200ms"
+              displayValue="1.2s+"
               isVisible={isVisible}
               delay={600}
             />
@@ -173,59 +172,59 @@ export function Benchmarks() {
           {/* Accuracy Card */}
           <BenchmarkCard
             icon={<Brain className="h-5 w-5" />}
-            title="Contextual Accuracy"
-            description="Higher is better"
+            title="Precisão Contextual"
+            description="Quanto maior, melhor"
             isVisible={isVisible}
           >
             <BenchmarkBar
               label="ISA (270M)"
-              value={98}
+              value={96}
               maxValue={100}
-              displayValue="98%"
+              displayValue="96%"
               isHero
               isVisible={isVisible}
               delay={300}
             />
-            <div className="pt-1 text-xs text-muted-foreground/70">
-              Detects context, not just patterns
+            <div className="pt-1 text-[10px] uppercase tracking-wider font-bold text-primary/80">
+              Detecta contexto, não apenas padrões
             </div>
             <BenchmarkBar
-              label="Regex/Rule-based"
-              value={60}
+              label="Baseado em Regras (Regex)"
+              value={55}
               maxValue={100}
-              displayValue="60%"
+              displayValue="55%"
               isVisible={isVisible}
               delay={500}
             />
-            <div className="text-xs text-muted-foreground/70">
-              Fails on typos or complex variations
+            <div className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">
+              Falha em erros de digitação e variações
             </div>
           </BenchmarkCard>
 
           {/* Hardware Card */}
           <BenchmarkCard
             icon={<Cpu className="h-5 w-5" />}
-            title="Hardware Footprint"
-            description="VRAM requirement"
+            title="Requisitos de Hardware"
+            description="Uso estimado de VRAM"
             isVisible={isVisible}
           >
             <div className="space-y-4">
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-3">
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-foreground">ISA (270M)</span>
-                  <span className="font-mono font-bold text-primary">{"< 1GB"}</span>
+                  <span className="font-mono font-bold text-primary">{"< 500MB"}</span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Runs on Raspberry Pi / CPU
+                  Roda em Raspberry Pi, Edge ou CPU simples
                 </p>
               </div>
               <div className="rounded-lg border border-border/30 bg-secondary/20 p-3">
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">Llama-3 (8B)</span>
-                  <span className="font-mono text-muted-foreground">~6GB</span>
+                  <span className="font-mono text-muted-foreground">~5.5GB</span>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground/70">
-                  Requires dedicated GPU
+                  Exige GPU dedicada para boa performance
                 </p>
               </div>
             </div>
@@ -233,8 +232,8 @@ export function Benchmarks() {
         </div>
 
         {/* Footnote */}
-        <p className="mt-8 text-center text-xs text-muted-foreground/60">
-          Benchmarks run on standard consumer CPU (M1 Air equivalent).
+        <p className="mt-8 text-center text-xs text-muted-foreground/60 italic">
+          * Testes realizados em CPU padrão (Equivalente a Apple M1 Air 8GB). Resultados de LLMs locais usando Ollama (Q4_K_M).
         </p>
       </div>
     </section>

@@ -17,7 +17,7 @@ function CopyButton({ text }: { text: string }) {
     <button
       onClick={handleCopy}
       className="absolute right-3 top-3 rounded-md p-2 text-muted-foreground opacity-0 transition-all hover:bg-secondary hover:text-foreground group-hover:opacity-100"
-      aria-label="Copy code"
+      aria-label="Copiar código"
     >
       {copied ? <Check className="size-4 text-primary" /> : <Copy className="size-4" />}
     </button>
@@ -41,7 +41,7 @@ function N8nLogo() {
 }
 
 const ollamaCode = `ollama pull isa-guardrail
-ollama run isa-guardrail "My client John Doe (CPF 123.456.789-00)..."`
+ollama run isa-guardrail "Meu cliente João Silva (CPF 123.456.789-00)..."`
 
 const pythonCode = `from langchain.llms import Ollama
 
@@ -60,11 +60,11 @@ export function Integrations() {
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Drop-in Privacy for{" "}
-            <span className="text-primary">Any Stack</span>
+            Privacidade Integrada em{" "}
+            <span className="text-primary">Qualquer Stack</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Whether you run local agents or complex automation pipelines, ISA integrates in seconds.
+            Não importa se você roda agentes locais ou pipelines complexos de automação, a ISA se integra em segundos.
           </p>
         </div>
 
@@ -76,14 +76,14 @@ export function Integrations() {
               className="gap-2 px-4 py-2 data-[state=active]:bg-background data-[state=active]:text-primary"
             >
               <Terminal className="size-4" />
-              Local Inference
+              Inferência Local
             </TabsTrigger>
             <TabsTrigger 
               value="n8n" 
               className="gap-2 px-4 py-2 data-[state=active]:bg-background data-[state=active]:text-primary"
             >
               <Workflow className="size-4" />
-              Automation
+              Automação
             </TabsTrigger>
             <TabsTrigger 
               value="python" 
@@ -102,8 +102,8 @@ export function Integrations() {
                   <OllamaLogo />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Ollama Integration</h3>
-                  <p className="text-sm text-muted-foreground">Run ISA locally with a single command</p>
+                  <h3 className="font-semibold text-foreground">Integração com Ollama</h3>
+                  <p className="text-sm text-muted-foreground">Rode a ISA localmente com um único comando</p>
                 </div>
               </div>
               
@@ -126,7 +126,7 @@ export function Integrations() {
                     <span className="text-muted-foreground">$</span>{" "}
                     <span className="text-primary">ollama run</span>{" "}
                     <span className="text-foreground">isa-guardrail</span>{" "}
-                    <span className="text-amber-400">{'"My client John Doe (CPF 123.456.789-00)..."'}</span>
+                    <span className="text-amber-400">{'"Meu cliente João Silva (CPF 123.456.789-00)..."'}</span>
                   </code>
                 </pre>
               </div>
@@ -141,8 +141,8 @@ export function Integrations() {
                   <N8nLogo />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">n8n Workflow Integration</h3>
-                  <p className="text-sm text-muted-foreground">Visual automation with privacy built-in</p>
+                  <h3 className="font-semibold text-foreground">Fluxo no n8n</h3>
+                  <p className="text-sm text-muted-foreground">Automação visual com privacidade nativa</p>
                 </div>
               </div>
 
@@ -154,7 +154,7 @@ export function Integrations() {
                     <div className="flex h-16 w-32 items-center justify-center rounded-lg border-2 border-purple-500/50 bg-purple-500/10 text-purple-400 transition-all hover:border-purple-500 hover:bg-purple-500/20">
                       <div className="text-center">
                         <div className="text-xs font-medium">Webhook</div>
-                        <div className="text-[10px] opacity-70">Trigger</div>
+                        <div className="text-[10px] opacity-70">Gatilho</div>
                       </div>
                     </div>
                   </div>
@@ -186,7 +186,7 @@ export function Integrations() {
                     <div className="flex h-16 w-32 items-center justify-center rounded-lg border-2 border-green-500/50 bg-green-500/10 text-green-400 transition-all hover:border-green-500 hover:bg-green-500/20">
                       <div className="text-center">
                         <div className="text-xs font-medium">ChatGPT</div>
-                        <div className="text-[10px] opacity-70">LLM</div>
+                        <div className="text-[10px] opacity-70">LLM Cloud</div>
                       </div>
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export function Integrations() {
                     <div className="flex h-16 w-32 items-center justify-center rounded-lg border-2 border-amber-500/50 bg-amber-500/10 text-amber-400 transition-all hover:border-amber-500 hover:bg-amber-500/20">
                       <div className="text-center">
                         <div className="text-xs font-medium">Slack</div>
-                        <div className="text-[10px] opacity-70">Output</div>
+                        <div className="text-[10px] opacity-70">Saída</div>
                       </div>
                     </div>
                   </div>
@@ -211,7 +211,7 @@ export function Integrations() {
                 {/* Label */}
                 <div className="mt-4 text-center">
                   <span className="rounded-full bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
-                    Drag & drop ISA into any workflow
+                    Arraste e solte a ISA em qualquer workflow
                   </span>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export function Integrations() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Python / LangChain</h3>
-                  <p className="text-sm text-muted-foreground">Native integration with popular AI frameworks</p>
+                  <p className="text-sm text-muted-foreground">Integração nativa com os frameworks de IA mais populares</p>
                 </div>
               </div>
               
@@ -248,7 +248,7 @@ export function Integrations() {
                     <span className="text-purple-400">import</span>{" "}
                     <span className="text-primary">Ollama</span>
                     {"\n\n"}
-                    <span className="text-muted-foreground"># Initialize the guardrail</span>
+                    <span className="text-muted-foreground"># Inicializa o guardrail</span>
                     {"\n"}
                     <span className="text-foreground">guardrail</span>{" "}
                     <span className="text-purple-400">=</span>{" "}
@@ -259,7 +259,7 @@ export function Integrations() {
                     <span className="text-green-400">"isa-guardrail"</span>
                     <span className="text-foreground">)</span>
                     {"\n\n"}
-                    <span className="text-muted-foreground"># Anonymize sensitive data</span>
+                    <span className="text-muted-foreground"># Anonimiza dados sensíveis</span>
                     {"\n"}
                     <span className="text-foreground">clean_prompt</span>{" "}
                     <span className="text-purple-400">=</span>{" "}
@@ -267,7 +267,7 @@ export function Integrations() {
                     <span className="text-purple-400">.</span>
                     <span className="text-primary">invoke</span>
                     <span className="text-foreground">(</span>
-                    <span className="text-foreground">sensitive_input</span>
+                    <span className="text-foreground">input_sensivel</span>
                     <span className="text-foreground">)</span>
                   </code>
                 </pre>

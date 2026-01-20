@@ -3,24 +3,24 @@ import { Cpu, Blocks, Lock } from "lucide-react"
 const benefits = [
   {
     icon: Cpu,
-    title: "Ultra-Lightweight",
+    title: "Ultra-Leve",
     description:
-      "At just 270M parameters (based on Gemma 3), ISA runs efficiently on CPU and edge devices with minimal overhead. No GPU required.",
+      "Com apenas 270M de parâmetros (baseado em Gemma 3), a ISA roda com eficiência em CPU e dispositivos de borda. Sem necessidade de GPU.",
     highlight: "270M params",
   },
   {
     icon: Blocks,
-    title: "Framework Agnostic",
+    title: "Agnóstico a Frameworks",
     description:
-      "Seamlessly integrates with LangChain, AutoGen, CrewAI, and any custom agent framework. Drop-in compatibility with your existing stack.",
-    highlight: "Any framework",
+      "Integração perfeita com LangChain, AutoGen, CrewAI e qualquer framework customizado. Compatibilidade total com sua stack atual.",
+    highlight: "Qualquer stack",
   },
   {
     icon: Lock,
-    title: "Privacy First",
+    title: "Privacidade em Primeiro Lugar",
     description:
-      "Your data remains yours. No PII is ever sent to third-party providers. Full compliance with GDPR, HIPAA, and enterprise security requirements.",
-    highlight: "Zero leakage",
+      "Seus dados são seus. Nenhuma informação sensível é enviada a terceiros. Conformidade total com LGPD, GDPR e requisitos corporativos.",
+    highlight: "Vazamento Zero",
   },
 ]
 
@@ -31,11 +31,10 @@ export function Benefits() {
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Built for Enterprise Security
+            Construído para Segurança Corporativa
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            ISA provides peace of mind for developers and security teams deploying LLMs in
-            production environments.
+            A ISA oferece tranquilidade para desenvolvedores e times de segurança ao implementar LLMs em ambientes de produção.
           </p>
         </div>
 

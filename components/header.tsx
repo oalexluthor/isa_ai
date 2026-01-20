@@ -25,7 +25,7 @@ export function Header() {
             href="#docs"
             className="text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            Documentation
+            Documentação
           </Link>
           <Link
             href="#benchmarks"
@@ -66,7 +66,7 @@ export function Header() {
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Documentation
+              Documentação
             </Link>
             <Link
               href="#benchmarks"

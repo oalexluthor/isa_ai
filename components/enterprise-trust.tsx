@@ -13,42 +13,42 @@ import {
 const risks = [
   {
     icon: ShieldAlert,
-    title: "Data Leakage & Shadow AI",
+    title: "Vazamento de Dados & Shadow AI",
     description:
-      "Employees often paste sensitive customer data, API keys, or financial reports into web-based LLMs, inadvertently training public models on your private data.",
+      "Colaboradores costumam colar dados sensíveis de clientes ou relatórios financeiros em LLMs web, treinando inadvertidamente modelos públicos com seus dados privados.",
   },
   {
     icon: FileWarning,
-    title: "Regulatory Non-Compliance",
+    title: "Não Conformidade Regulatória",
     description:
-      "Regulations like GDPR, CCPA, and LGPD impose massive fines for PII exposure. Sending unmasked data to 3rd-party clouds is a liability.",
+      "Regulamentações como a LGPD impõem multas pesadas pela exposição de PII. Enviar dados não mascarados para nuvens de terceiros é um risco jurídico.",
   },
   {
     icon: AlertTriangle,
-    title: "Intellectual Property Loss",
+    title: "Perda de Propriedade Intelectual",
     description:
-      "Once your data leaves your local environment, you lose control over its lifecycle and its potential exposure in future model iterations.",
+      "Assim que seus dados saem do ambiente local, você perde o controle sobre seu ciclo de vida e a possível exposição em futuras iterações dos modelos.",
   },
 ]
 
 const solutions = [
   {
     icon: Lock,
-    title: "Zero-Trust Privacy",
+    title: "Privacidade Zero-Trust",
     description:
-      "ISA acts as a stateless local filter. It intercepts prompts, replaces sensitive entities with secure markers, and only then allows the 'safe' version to reach the cloud.",
+      "A ISA atua como um filtro local sem estado (stateless). Ela intercepta os prompts, substitui entidades sensíveis por marcadores seguros e só então libera o envio.",
   },
   {
     icon: Brain,
-    title: "Contextual Integrity",
+    title: "Integridade Contextual",
     description:
-      "Unlike primitive regex filters, ISA's 270M neural engine understands the context, ensuring that names, addresses, and IDs are swapped while keeping the prompt's meaning 100% intact.",
+      "Diferente de filtros regex primitivos, o motor neural da ISA entende o contexto, garantindo que nomes e IDs sejam trocados mantendo o sentido original do prompt.",
   },
   {
     icon: Server,
-    title: "Cost-Effective Governance",
+    title: "Governança de Baixo Custo",
     description:
-      "Avoid expensive enterprise 'Privacy Clouds'. ISA runs locally on standard hardware, providing a lightweight guardrail for every employee's terminal or agent pipeline.",
+      "Evite 'Nuvens de Privacidade' caras. A ISA roda localmente em hardware comum, fornecendo um guardrail leve para cada terminal ou pipeline de agentes.",
   },
 ]
 
@@ -66,21 +66,21 @@ export function EnterpriseTrust() {
         <div className="mb-16 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/50 px-4 py-1.5 text-sm text-muted-foreground">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            Enterprise Security
+            Segurança Corporativa
           </div>
           <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Bridging the Gap Between{" "}
+            Unindo a{" "}
             <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-              Innovation
+              Inovação
             </span>{" "}
-            and{" "}
+            à{" "}
             <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-              Compliance
+              Conformidade
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-pretty text-lg text-muted-foreground">
-            Large Language Models are powerful, but they are data-hungry. ISA
-            ensures your corporate intelligence stays within your perimeter.
+            Modelos de Linguagem são poderosos, mas famintos por dados. A ISA
+            garante que a inteligência corporativa permaneça dentro do seu perímetro.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export function EnterpriseTrust() {
                 <AlertTriangle className="h-5 w-5 text-amber-500" />
               </div>
               <h3 className="text-xl font-semibold text-amber-400">
-                The Invisible Risks
+                Os Riscos Invisíveis
               </h3>
             </div>
 
@@ -131,7 +131,7 @@ export function EnterpriseTrust() {
                 <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
               <h3 className="text-xl font-semibold text-primary">
-                The ISA Advantage
+                A Vantagem da ISA
               </h3>
             </div>
 
@@ -174,10 +174,10 @@ export function EnterpriseTrust() {
             </div>
             <div className="text-left">
               <div className="font-medium text-foreground">
-                Security Whitepaper
+                Security Whitepaper (PT-BR)
               </div>
               <div className="text-sm text-muted-foreground">
-                Download our compliance guide
+                Baixe nosso guia de conformidade
               </div>
             </div>
             <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />

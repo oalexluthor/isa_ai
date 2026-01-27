@@ -20,8 +20,11 @@ export default function DocsPage() {
     { title: "Introdução", id: "introducao" },
     { title: "Instalação", id: "instalacao" },
     { title: "Como os Tokens Funcionam", id: "tokens" },
-    { title: "Engenharia de Prompt", id: "prompts" },
-    { title: "Modelos Suportados", id: "modelos" },
+    { title: "Dicionário de entidades", id: "dicionarios_entidades" },
+    { title: "System prompts e modos de operação", id: "system_prompts" },
+    { title: "Padrões de Integração Arquitetural", id: "integracao_arquitetural" },
+    { title: "Instalaçao e Setup", id: "instalacao" },
+    { title: "FAQ e Limitações", id: "faq" },
   ];
 
   return (
@@ -177,7 +180,7 @@ export default function DocsPage() {
               </section>
 
               {/* Tópico: Dicionário de Entidades */}
-              <section id="modelos" className="scroll-mt-24">
+              <section id="dicionarios_entidades" className="scroll-mt-24">
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-amber-500 pl-4">
                   Dicionário de Entidades
                 </h2>
@@ -381,7 +384,7 @@ export default function DocsPage() {
               </section>
 
               {/* Tópico: System Prompts e Modos */}
-              <section id="prompts" className="scroll-mt-24">
+              <section id="system_prompts" className="scroll-mt-24">
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-primary pl-4">
                   System Prompts e Modos de Operação
                 </h2>
@@ -513,13 +516,13 @@ export default function DocsPage() {
               </section>
 
               {/* Tópico: Casos de Borda e Verificação */}
-              <section id="edge-cases" className="scroll-mt-24">
+              {/* <section id="edge-cases" className="scroll-mt-24">
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-indigo-500 pl-4">
                   Casos de Borda e Limitações
                 </h2>
 
                 <div className="prose prose-invert max-w-none text-foreground space-y-8">
-                  {/* <p>
+                  <p>
                     Embora a ISA seja otimizada para o contexto brasileiro, sua
                     base neural permite uma compreensão ampla de padrões
                     internacionais e formatos ambíguos.
@@ -553,61 +556,13 @@ export default function DocsPage() {
                         numérico.
                       </p>
                     </div>
-                  </div> */}
-
-                  {/* Alerta de Versão Beta */}
-                  <div className="relative overflow-hidden rounded-2xl border border-amber-500/50 bg-amber-500/5 p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-amber-500">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
-                          <path d="M12 9v4" />
-                          <path d="M12 17h.01" />
-                        </svg>
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="font-bold text-amber-500 text-lg">
-                          Aviso de Versão Beta
-                        </h3>
-                        <p className="text-sm leading-relaxed text-amber-200/70">
-                          A ISA está atualmente em <strong>v1.0.0-beta</strong>.
-                          Como qualquer modelo probabilístico, existe uma
-                          pequena margem para falsos negativos (dados sensíveis
-                          não detectados) ou falsos positivos.
-                        </p>
-                        <ul className="text-xs space-y-1 list-disc pl-4 text-amber-200/60">
-                          <li>
-                            Sempre revise fluxos que envolvam dados críticos de
-                            saúde ou financeiros.
-                          </li>
-                          <li>
-                            Utilize o sistema de logs da ISA para monitorar o
-                            que está sendo anonimizado.
-                          </li>
-                          <li>
-                            Em ambientes de produção, recomenda-se uma camada de
-                            validação humana em casos de baixa confiança
-                            (confidence score).
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  </div> 
+                 
                 </div>
-              </section>
+              </section> */}
 
               {/* Tópico: Padrões de Integração Arquitetural */}
-              <section id="arquitetura" className="scroll-mt-24">
+              <section id="integracao_arquitetural" className="scroll-mt-24">
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-cyan-500 pl-4">
                   Padrões de Integração Arquitetural
                 </h2>
@@ -936,6 +891,58 @@ export default function DocsPage() {
                         torna ideal para ambientes <em>air-gapped</em>,
                         governamentais ou com restrições severas de rede.
                       </p>
+                    </div>
+                  </div>
+
+
+
+
+
+                   <div className="relative overflow-hidden rounded-2xl border border-amber-500/50 bg-amber-500/5 p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-amber-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                          <path d="M12 9v4" />
+                          <path d="M12 17h.01" />
+                        </svg>
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="font-bold text-amber-500 text-lg">
+                          Aviso de Versão Beta
+                        </h3>
+                        <p className="text-sm leading-relaxed text-amber-200/70">
+                          A ISA está atualmente em <strong>v1.0.0-beta</strong>.
+                          Como qualquer modelo probabilístico, existe uma
+                          pequena margem para falsos negativos (dados sensíveis
+                          não detectados) ou falsos positivos.
+                        </p>
+                        <ul className="text-xs space-y-1 list-disc pl-4 text-amber-200/60">
+                          <li>
+                            Sempre revise fluxos que envolvam dados críticos de
+                            saúde ou financeiros.
+                          </li>
+                          <li>
+                            Utilize o sistema de logs da ISA para monitorar o
+                            que está sendo anonimizado.
+                          </li>
+                          <li>
+                            Em ambientes de produção, recomenda-se uma camada de
+                            validação humana em casos de baixa confiança
+                            (confidence score).
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
 

@@ -45,7 +45,7 @@ export default function DocsPage() {
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm text-muted-foreground transition-all hover:bg-secondary hover:text-primary"
+                      className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm text-foreground transition-all hover:bg-secondary hover:text-primary"
                     >
                       {item.title}
                       <ChevronRight className="size-3 opacity-0 transition-all group-hover:opacity-100" />
@@ -69,7 +69,7 @@ export default function DocsPage() {
                   ISA (Information Sensitive Anonymizer)
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl text-foreground leading-relaxed">
                 Aprenda a configurar, integrar e expandir o guardrail de
                 privacidade ultra-leve para seus agentes de IA.
               </p>
@@ -82,7 +82,7 @@ export default function DocsPage() {
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-primary pl-4">
                   Introdução
                 </h2>
-                <div className="prose prose-invert max-w-none text-muted-foreground leading-relaxed space-y-4">
+                <div className="prose prose-invert max-w-none text-foreground leading-relaxed space-y-4">
                   <p>
                     A ISA (Information Sensitive Anonymizer) foi projetada para
                     resolver o maior gargalo na adoção de LLMs em empresas:{" "}
@@ -104,7 +104,7 @@ export default function DocsPage() {
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-emerald-500 pl-4">
                   Como os Tokens Funcionam
                 </h2>
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-6">
+                <div className="prose prose-invert max-w-none text-foreground space-y-6">
                   <p>
                     O processo da ISA não é uma simples deleção (redacting), mas
                     sim uma{" "}
@@ -134,22 +134,20 @@ export default function DocsPage() {
                     </div>
                     <div className="rounded-xl border border-border bg-secondary/30 p-4">
                       <div className="mb-2 font-bold text-primary">
-                        3. Mapeamento
+                        3. Mapeamento (Opcional)
                       </div>
                       <p className="text-sm">
-                        A ISA gera um mapa temporário (local) que permite
+                        A ISA pode gerar uma resposta JSON, com o texto anonimizado e um mapa que permite
                         reverter os tokens após a resposta da LLM.
                       </p>
                     </div>
                   </div>
 
                   <h3 className="text-xl font-semibold text-foreground mt-8">
-                    O Ciclo de Reversão
+                    O Ciclo de Reversão (Funcionalidade em desenvolvimento)
                   </h3>
                   <p>
-                    Para que a resposta da IA faça sentido para o usuário final,
-                    sua aplicação deve realizar a "desanonimização". A ISA
-                    fornece um objeto de mapeamento junto com o texto limpo:
+                    Para reversão de um texto anonimizado, você deve passar ele, juntamente do mapa em JSON com as tags de anonimização e seus valores originais. A ISA devolverá o texto com seus valores e formatação original.
                   </p>
 
                   <div className="rounded-lg bg-slate-950 p-4 font-mono text-xs overflow-x-auto border border-border">
@@ -183,7 +181,7 @@ export default function DocsPage() {
                 <h2 className="mb-6 text-3xl font-bold tracking-tight border-l-4 border-amber-500 pl-4">
                   Dicionário de Entidades
                 </h2>
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-8">
+                <div className="prose prose-invert max-w-none text-foreground space-y-8">
                   <p>
                     A ISA suporta uma ampla gama de entidades divididas em
                     categorias lógicas. Cada entidade detectada é substituída
@@ -200,7 +198,7 @@ export default function DocsPage() {
                       </h3>
                       <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
                         <table className="w-full text-left text-sm">
-                          <thead className="bg-secondary/30 text-muted-foreground uppercase text-[10px] tracking-wider">
+                          <thead className="bg-secondary/30 text-foreground uppercase text-[10px] tracking-wider">
                             <tr>
                               <th className="px-4 py-3 font-medium">
                                 Tipo de Dado
@@ -377,9 +375,7 @@ export default function DocsPage() {
                   </div>
 
                   <div className="mt-8 rounded-lg bg-secondary/20 p-4 border border-border/50 text-sm italic">
-                    Nota: A lista acima é um resumo das entidades mais comuns.
-                    Para visualizar o mapeamento completo de todos os 45+
-                    marcadores, consulte o nosso repositório no GitHub.
+                    Nota: A lista acima é um resumo das entidades mais comuns. Mais entidades serão adicionadas a medida que o treinamento for aprimorado.
                   </div>
                 </div>
               </section>
@@ -390,7 +386,7 @@ export default function DocsPage() {
                   System Prompts e Modos de Operação
                 </h2>
 
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-8">
+                <div className="prose prose-invert max-w-none text-foreground space-y-8">
                   <p>
                     A ISA pode ser configurada via <code>system_prompt</code>{" "}
                     para operar em diferentes níveis de profundidade. Isso
@@ -409,10 +405,10 @@ export default function DocsPage() {
                       os dados posteriormente.
                     </p>
                     <div className="space-y-3">
-                      <div className="text-xs font-mono uppercase text-muted-foreground">
+                      <div className="text-xs font-mono uppercase text-foreground">
                         System Prompt sugerido:
                       </div>
-                      <div className="bg-slate-900 p-3 rounded border border-white/5 text-sm font-mono text-primary-foreground">
+                      <div className="bg-slate-900 p-3 rounded border border-white/5 text-sm font-mono text-foreground">
                         "Você é um agente de privacidade. Substitua todos os PII
                         pelos labels correspondentes. Retorne apenas o texto
                         limpo."
@@ -433,7 +429,7 @@ export default function DocsPage() {
 
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <div className="text-xs font-mono text-muted-foreground">
+                        <div className="text-xs font-mono text-foreground">
                           Input:
                         </div>
                         <div className="bg-slate-950 p-3 rounded text-xs font-mono border border-border">
@@ -441,7 +437,7 @@ export default function DocsPage() {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <div className="text-xs font-mono text-muted-foreground">
+                        <div className="text-xs font-mono text-foreground">
                           Output:
                         </div>
                         <div className="bg-slate-950 p-3 rounded text-xs font-mono border border-emerald-500/30">
@@ -468,7 +464,7 @@ export default function DocsPage() {
                       reconstruir a mensagem final com segurança.
                     </p>
                     <div className="space-y-3">
-                      <div className="text-xs font-mono uppercase text-muted-foreground">
+                      <div className="text-xs font-mono uppercase text-foreground">
                         System Prompt sugerido:
                       </div>
                       <div className="bg-slate-900 p-3 rounded border border-white/5 text-sm font-mono text-amber-100/80">
@@ -480,7 +476,7 @@ export default function DocsPage() {
                   </div>
 
                   {/* Dicas de Ajuste Fino */}
-                  <div className="mt-12">
+                  {/* <div className="mt-12">
                     <h3 className="text-2xl font-bold text-foreground mb-6">
                       Ajuste de Sensibilidade
                     </h3>
@@ -489,7 +485,7 @@ export default function DocsPage() {
                         <h4 className="font-bold mb-2 text-primary text-sm uppercase">
                           Detecção Agressiva
                         </h4>
-                        <p className="text-xs text-muted-foreground italic mb-3">
+                        <p className="text-xs text-foreground italic mb-3">
                           "Seja extremamente rigoroso. Na dúvida se algo é um
                           nome ou endereço, anonimize."
                         </p>
@@ -502,7 +498,7 @@ export default function DocsPage() {
                         <h4 className="font-bold mb-2 text-primary text-sm uppercase">
                           Foco em Documentos
                         </h4>
-                        <p className="text-xs text-muted-foreground italic mb-3">
+                        <p className="text-xs text-foreground italic mb-3">
                           "Ignore nomes próprios em contextos casuais, foque
                           apenas em documentos e chaves técnicas."
                         </p>
@@ -512,7 +508,7 @@ export default function DocsPage() {
                         </ul>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </section>
 
@@ -522,15 +518,15 @@ export default function DocsPage() {
                   Casos de Borda e Limitações
                 </h2>
 
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-8">
-                  <p>
+                <div className="prose prose-invert max-w-none text-foreground space-y-8">
+                  {/* <p>
                     Embora a ISA seja otimizada para o contexto brasileiro, sua
                     base neural permite uma compreensão ampla de padrões
                     internacionais e formatos ambíguos.
                   </p>
 
                   <div className="grid gap-6 md:grid-cols-2 font-sans">
-                    {/* Nomes Estrangeiros */}
+                    
                     <div className="rounded-xl border border-border bg-secondary/5 p-5">
                       <h3 className="text-foreground font-bold mb-2 flex items-center gap-2">
                         🌍 Nomes e Contextos Globais
@@ -544,7 +540,7 @@ export default function DocsPage() {
                       </p>
                     </div>
 
-                    {/* Documentos Internacionais */}
+                    
                     <div className="rounded-xl border border-border bg-secondary/5 p-5">
                       <h3 className="text-foreground font-bold mb-2 flex items-center gap-2">
                         📑 Documentos Externos
@@ -557,7 +553,7 @@ export default function DocsPage() {
                         numérico.
                       </p>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Alerta de Versão Beta */}
                   <div className="relative overflow-hidden rounded-2xl border border-amber-500/50 bg-amber-500/5 p-6">
@@ -607,21 +603,6 @@ export default function DocsPage() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Como melhorar a detecção */}
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-foreground">
-                      Refinando a Detecção
-                    </h3>
-                    <p>
-                      Se você notar que um dado específico não está sendo
-                      capturado, tente reforçar o System Prompt:
-                    </p>
-                    <div className="bg-slate-950 p-4 rounded-lg border border-border font-mono text-sm text-blue-400">
-                      "Mode: Aggressive. Focus on alphanumeric strings longer
-                      than 8 characters."
-                    </div>
-                  </div>
                 </div>
               </section>
 
@@ -631,11 +612,11 @@ export default function DocsPage() {
                   Padrões de Integração Arquitetural
                 </h2>
 
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-12">
+                <div className="prose prose-invert max-w-none text-foreground space-y-12">
                   <p>
                     A versatilidade da ISA permite que ela seja implementada em
                     diferentes camadas da sua stack tecnológica. Abaixo estão os
-                    três padrões mais comuns utilizados em produção.
+                    dois padrões mais comuns utilizados em produção.
                   </p>
 
                   {/* Pattern 1: Privacy Proxy */}
@@ -645,7 +626,7 @@ export default function DocsPage() {
                         01
                       </div>
                       <h3 className="text-xl font-bold text-foreground m-0">
-                        Pattern: Privacy Proxy
+                        Privacy Proxy
                       </h3>
                     </div>
                     <p>
@@ -680,7 +661,7 @@ export default function DocsPage() {
                   </div>
 
                   {/* Pattern 2: Local Agent / CLI */}
-                  <div className="space-y-4">
+                  {/* <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10 text-purple-500 font-bold border border-purple-500/20">
                         02
@@ -710,16 +691,16 @@ export default function DocsPage() {
                       Engenharia lidando com segredos, chaves de API e logs de
                       produção.
                     </p>
-                  </div>
+                  </div> */}
 
                   {/* Pattern 3: Batch Cleaning (Data Lake) */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500 font-bold border border-emerald-500/20">
-                        03
+                        02
                       </div>
                       <h3 className="text-xl font-bold text-foreground m-0">
-                        Pattern: Dataset Batch Cleaning
+                        Dataset Batch Cleaning
                       </h3>
                     </div>
                     <p>
@@ -750,10 +731,10 @@ export default function DocsPage() {
                   Instalação e Setup
                 </h2>
 
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-6">
+                <div className="prose prose-invert max-w-none text-foreground space-y-6">
                   <p>
-                    A ISA foi otimizada para rodar localmente com consumo mínimo
-                    de recursos. Escolha sua plataforma favorita abaixo:
+                    Por ser distribuída em formato GGUF, ISA pode rodar localmente com consumo mínimo
+                    de recursos, seja usando Ollama, LM Studio ou VLLM. Verifique as instruções de como instalar um modelo customizado na sua plataforma de escolha.
                   </p>
 
                   <Tabs defaultValue="ollama" className="w-full">
@@ -777,13 +758,13 @@ export default function DocsPage() {
                           ou Linux.
                         </p>
                         <div className="bg-slate-950 p-4 rounded-lg border border-border font-mono text-sm">
-                          <span className="text-muted-foreground">
+                          <span className="text-foreground">
                             # Baixar e rodar o modelo
                           </span>
                           {"\n"}
                           <span className="text-primary">ollama</span> run
                           isa-guardrail{"\n\n"}
-                          <span className="text-muted-foreground">
+                          <span className="text-foreground">
                             # Testar via API (CURL)
                           </span>
                           {"\n"}
@@ -834,7 +815,7 @@ export default function DocsPage() {
                           performance em clusters ou nuvem.
                         </p>
                         <div className="bg-slate-950 p-4 rounded-lg border border-border font-mono text-sm overflow-x-auto">
-                          <span className="text-muted-foreground">
+                          <span className="text-foreground">
                             # Rodar via Docker
                           </span>
                           {"\n"}
@@ -855,7 +836,7 @@ export default function DocsPage() {
                     </h3>
                     <div className="grid gap-6 md:grid-cols-3">
                       <div className="space-y-1">
-                        <div className="text-xs text-muted-foreground uppercase font-bold">
+                        <div className="text-xs text-foreground uppercase font-bold">
                           RAM / VRAM
                         </div>
                         <div className="text-lg font-semibold">~300 MB</div>
@@ -864,7 +845,7 @@ export default function DocsPage() {
                         </p>
                       </div>
                       <div className="space-y-1">
-                        <div className="text-xs text-muted-foreground uppercase font-bold">
+                        <div className="text-xs text-foreground uppercase font-bold">
                           Armazenamento
                         </div>
                         <div className="text-lg font-semibold">512 MB</div>
@@ -873,7 +854,7 @@ export default function DocsPage() {
                         </p>
                       </div>
                       <div className="space-y-1">
-                        <div className="text-xs text-muted-foreground uppercase font-bold">
+                        <div className="text-xs text-foreground uppercase font-bold">
                           Arquitetura
                         </div>
                         <div className="text-lg font-semibold">ARM64 / x86</div>
@@ -892,7 +873,7 @@ export default function DocsPage() {
                   FAQ Técnica & Limitações
                 </h2>
 
-                <div className="prose prose-invert max-w-none text-muted-foreground space-y-6">
+                <div className="prose prose-invert max-w-none text-foreground space-y-6">
                   <div className="grid gap-6">
                     {/* Pergunta 1 */}
                     <div className="rounded-xl border border-border bg-secondary/10 p-6">
@@ -900,16 +881,16 @@ export default function DocsPage() {
                         Qual o tamanho máximo de texto (Context Window)?
                       </h3>
                       <p className="text-sm leading-relaxed">
-                        A ISA suporta nativamente uma janela de contexto de{" "}
-                        <strong>2.048 tokens</strong> (aproximadamente 1.500
-                        palavras ou 8.000 caracteres em Português).
+                        Assim como o Gemma-3-270M, ISA suporta nativamente uma janela de contexto de{" "}
+                        <strong>32.000 tokens</strong> (aproximadamente 24.000
+                        palavras em Português). No estado atual, ainda não foram feitos testes com textos muito longos.
                       </p>
                       <div className="mt-3 p-3 bg-primary/5 rounded border border-primary/20 text-xs italic">
                         <strong>Dica para Textos Longos:</strong> Se você
                         precisar processar documentos jurídicos ou livros
                         inteiros, utilize uma estratégia de{" "}
                         <em>Sliding Window</em> (processamento por blocos de
-                        1.000 tokens com sobreposição de 100 tokens para manter
+                        tokens com sobreposição de 100 ou 200 tokens para manter
                         o contexto das frases).
                       </div>
                     </div>

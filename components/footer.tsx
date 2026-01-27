@@ -14,7 +14,6 @@ export function Footer() {
               <span className="font-semibold text-foreground">ISA</span>
             </div>
             <span className="text-sm text-muted-foreground">•</span>
-            <span className="text-sm text-muted-foreground">MIT License</span>
           </div>
 
           {/* Social Links */}
@@ -28,22 +27,13 @@ export function Footer() {
             >
               <Github className="h-5 w-5" />
             </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background text-muted-foreground transition-all hover:border-primary/50 hover:text-primary"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-8 border-t border-border/50 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            {'© '}{new Date().getFullYear()}{' ISA - Information Sensitive Anonymizer. Open source under MIT License.'}
+            {'© '}{new Date().getFullYear()}{' ISA - Information Sensitive Anonymizer.'}
           </p>
         </div>
       </div>

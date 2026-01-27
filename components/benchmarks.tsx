@@ -133,8 +133,8 @@ export function Benchmarks() {
           </p>
         </div>
 
-        {/* Benchmark Cards Grid */}
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Benchmark Cards Grid  alterar para cols-3 quando a acurácia estiver melhor*/}
+        <div className="grid gap-6 md:grid-cols-2">
           {/* Latency Card */}
           <BenchmarkCard
             icon={<Zap className="h-5 w-5" />}
@@ -170,7 +170,7 @@ export function Benchmarks() {
           </BenchmarkCard>
 
           {/* Accuracy Card */}
-          <BenchmarkCard
+          {/* <BenchmarkCard
             icon={<Brain className="h-5 w-5" />}
             title="Precisão Contextual"
             description="Quanto maior, melhor"
@@ -199,7 +199,7 @@ export function Benchmarks() {
             <div className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">
               Falha em erros de digitação e variações
             </div>
-          </BenchmarkCard>
+          </BenchmarkCard> */}
 
           {/* Hardware Card */}
           <BenchmarkCard

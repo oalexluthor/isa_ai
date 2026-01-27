@@ -933,8 +933,8 @@ export default function DocsPage() {
                       <p className="text-sm">
                         Diferente de APIs como a da OpenAI ou Google, a ISA não
                         faz chamadas externas após o download do modelo. Isso a
-                        torna ideal para ambientes <em>air-gapped</em> ou
-                        governamentais com restrições severas de rede.
+                        torna ideal para ambientes <em>air-gapped</em>,
+                        governamentais ou com restrições severas de rede.
                       </p>
                     </div>
                   </div>
@@ -943,7 +943,7 @@ export default function DocsPage() {
                   <div className="mt-12 text-center border-t border-border/50 pt-12">
                     <p className="text-sm italic">
                       Ainda tem dúvidas técnicas? Entre em contato via GitHub
-                      Issues ou participe da nossa comunidade.
+                      Issues.
                     </p>
                   </div>
                 </div>

@@ -127,9 +127,9 @@ export function Benchmarks() {
             </span>
             ?
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            O equilíbrio ideal entre a velocidade de um Regex e a inteligência de uma LLM. 
-            Latência ultra-baixa para aplicações em tempo real.
+          <p className="mx-auto max-w-2xl text-foreground">
+            Um dos maiores gargalos de aplicações com IA são a latência e alto consumo de recursos computacionais. Usar um modelo pequeno e especializado em apenas uma tarefa representa o equilíbrio ideal entre a velocidade de um Regex e a inteligência de uma LLM. <br /><br />
+            O projeto ISA nasceu com a ambição de ser uma ferramenta aberta e de uso corporativo, com latência ultra-baixa para aplicações em tempo real. 
           </p>
         </div>
 

@@ -922,19 +922,15 @@ export default function DocsPage() {
                           Aviso de Versão Beta
                         </h3>
                         <p className="text-sm leading-relaxed text-amber-200/70">
-                          A ISA está atualmente em <strong>v1.0.0-beta</strong>.
+                          A ISA está atualmente em <strong>v0.3.2-beta</strong>.
                           Como qualquer modelo probabilístico, existe uma
-                          pequena margem para falsos negativos (dados sensíveis
+                          margem para falsos negativos (dados sensíveis
                           não detectados) ou falsos positivos.
                         </p>
                         <ul className="text-xs space-y-1 list-disc pl-4 text-amber-200/60">
                           <li>
                             Sempre revise fluxos que envolvam dados críticos de
                             saúde ou financeiros.
-                          </li>
-                          <li>
-                            Utilize o sistema de logs da ISA para monitorar o
-                            que está sendo anonimizado.
                           </li>
                           <li>
                             Em ambientes de produção, recomenda-se uma camada de

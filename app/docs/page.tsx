@@ -9,11 +9,13 @@ import {
   Lock,
   Brain,
   Cpu,
+  ChevronLeftCircleIcon,
 } from "lucide-react";
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function DocsPage() {
   const menuItems = [
@@ -41,7 +43,17 @@ export default function DocsPage() {
             <div className="sticky top-24 space-y-8">
               <div>
                 <div className="flex items-center gap-2 mb-4 text-primary font-bold uppercase tracking-widest text-xs">
-                  <BookOpen className="size-4" /> Documentação
+                  <div className="flex flex-col">
+
+   <div className="flex flex-row mb-8">
+                       <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+                                 <span className="text-lg font-bold tracking-tight text-foreground">  <ChevronLeftCircleIcon></ChevronLeftCircleIcon> Página Inicial  </span>
+                               </Link>
+                     </div>
+
+                    <BookOpen className="size-4" /> Documentação
+                  
+                  </div>
                 </div>
                 <nav className="flex flex-col gap-2">
                   {menuItems.map((item) => (
@@ -64,7 +76,12 @@ export default function DocsPage() {
             {/* Header da Página */}
             <header className="mb-16 border-b border-border/50 pb-8">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                v1.0.0-beta
+                v0.3.2-alfa   <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/30">
+            <Shield className="h-5 w-5 text-primary" />
+          </div>
+          <span className="text-xl font-bold tracking-tight text-foreground">ISA (Information Sensitive Anonymizer)</span>
+        </Link>
               </div>
               <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
                 Documentação Técnica{" "}
@@ -922,7 +939,7 @@ export default function DocsPage() {
                           Aviso de Versão Beta
                         </h3>
                         <p className="text-sm leading-relaxed text-amber-200/70">
-                          A ISA está atualmente em <strong>v0.3.2-beta</strong>.
+                          A ISA está atualmente em <strong>v0.3.2-alfa</strong>.
                           Como qualquer modelo probabilístico, existe uma
                           margem para falsos negativos (dados sensíveis
                           não detectados) ou falsos positivos.

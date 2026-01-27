@@ -27,18 +27,12 @@ export function Header() {
           >
             Documentação
           </Link>
-          <Link
-            href="#benchmarks"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Benchmarks
-          </Link>
           <Button
             asChild
             variant="outline"
-            className="gap-2 border-primary/30 text-foreground transition-all hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] bg-transparent"
+            className="gap-2 border-primary/30 text-foreground transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] bg-transparent"
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/oalexluthor/isa_ai" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               <Star className="h-3.5 w-3.5" />
               Star on GitHub
@@ -80,7 +74,7 @@ export function Header() {
               variant="outline"
               className="w-full gap-2 border-primary/30 text-foreground transition-all hover:border-primary hover:bg-primary/10 bg-transparent"
             >
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/oalexluthor/isa_ai" target="_blank" rel="noopener noreferrer">
                 <Github className="h-4 w-4" />
                 <Star className="h-3.5 w-3.5" />
                 Star on GitHub

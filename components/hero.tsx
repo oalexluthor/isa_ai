@@ -48,7 +48,7 @@ export function Hero() {
             size="lg"
             className="gap-2 bg-primary px-8 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30"
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/oalexluthor/isa_ai" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
               Ver no GitHub
             </a>

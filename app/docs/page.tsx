@@ -76,7 +76,7 @@ export default function DocsPage() {
             {/* Header da Página */}
             <header className="mb-16 border-b border-border/50 pb-8">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                v0.3.2-alfa   <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+                v0.5.2-alfa   <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/30">
             <Shield className="h-5 w-5 text-primary" />
           </div>
@@ -105,13 +105,13 @@ export default function DocsPage() {
                 <div className="prose prose-invert max-w-none text-foreground leading-relaxed space-y-4">
                   <p>
                     A ISA (Information Sensitive Anonymizer) foi projetada para
-                    resolver o maior gargalo na adoção de LLMs em empresas:{" "}
+                    resolver um grande gargalo na adoção de LLMs em empresas:{" "}
                     <strong>a segurança de dados.</strong>
                   </p>
                   <p>
                     Diferente de soluções baseadas em nuvem, a ISA roda
                     localmente em sua infraestrutura, garantindo que Informações
-                    Pessoais Identificáveis (PII) nunca cruzem o seu firewall
+                    Pessoais Identificáveis (PII) nunca cruzem os limites da sua rede
                     sem estarem devidamente mascaradas.
                   </p>
                 </div>
@@ -138,7 +138,7 @@ export default function DocsPage() {
                         1. Identificação
                       </div>
                       <p className="text-sm">
-                        O motor neural identifica entidades sensíveis (PII) no
+                        O llm identifica entidades sensíveis (PII) no
                         texto bruto usando pesos do Gemma 3.
                       </p>
                     </div>
@@ -148,16 +148,16 @@ export default function DocsPage() {
                       </div>
                       <p className="text-sm">
                         Cada entidade é trocada por um token único (ex:{" "}
-                        <code>[PESSOA_01]</code>) mantendo a estrutura
+                        <code>[CONTACT_01]</code>) mantendo a estrutura
                         gramatical.
                       </p>
                     </div>
                     <div className="rounded-xl border border-border bg-secondary/30 p-4">
                       <div className="mb-2 font-bold text-primary">
-                        3. Mapeamento (Opcional)
+                        3. Mapeamento (Em desenvolvimento)
                       </div>
                       <p className="text-sm">
-                        A ISA pode gerar uma resposta JSON, com o texto anonimizado e um mapa que permite
+                        A ISA poderá gerar uma resposta JSON, com o texto anonimizado e um mapa que permite
                         reverter os tokens após a resposta da LLM.
                       </p>
                     </div>
@@ -191,7 +191,7 @@ export default function DocsPage() {
                   <p className="bg-primary/5 border-l-2 border-primary p-4 italic">
                     <strong>Dica de Segurança:</strong> Este mapa nunca deve ser
                     enviado para a LLM na nuvem. Ele deve permanecer na memória
-                    da sua aplicação local ou no seu backend seguro.
+                    da sua aplicação local ou no seu backend.
                   </p>
                 </div>
               </section>
@@ -230,22 +230,25 @@ export default function DocsPage() {
                           </thead>
                           <tbody className="divide-y divide-border/50">
                             {[
-                              { label: "CPF", marker: "[DOC_CPF]" },
+                              { label: "IPV4", marker: "[ID]" },
                               {
                                 label: "RG (Registro Geral)",
-                                marker: "[DOC_RG]",
+                                marker: "[ID]",
                               },
                               {
                                 label: "Passaporte",
-                                marker: "[DOC_PASSAPORTE]",
+                                marker: "[ID]",
                               },
-                              { label: "CNH", marker: "[DOC_CNH]" },
+                              { label: "CNH", marker: "[ID]" },
                               {
                                 label: "Título de Eleitor",
-                                marker: "[DOC_TITULO_ELEITOR]",
+                                marker: "[ID]",
                               },
-                              { label: "CNPJ", marker: "[ID_CNPJ]" },
-                              { label: "Matrícula", marker: "[ID_MATRICULA]" },
+                              { label: "CNPJ", marker: "[ID]" },
+                              { label: "Matrícula", marker: "[ID]" },
+                              { label: "Device Identifier", marker: "[ID]" },
+                              { label: "Unique Identifier", marker: "[ID]" },
+                              { label: "Registro Médico", marker: "[ID]" },
                             ].map((item) => (
                               <tr
                                 key={item.marker}
@@ -274,19 +277,19 @@ export default function DocsPage() {
                             {[
                               {
                                 label: "Cartão de Crédito",
-                                marker: "[FIN_CARTAO_CREDITO]",
+                                marker: "[FINANCE]",
                               },
                               {
                                 label: "Agência / Conta Bancária",
-                                marker: "[FIN_CONTA]",
+                                marker: "[FINANCE]",
                               },
                               {
-                                label: "CVV e Validade",
-                                marker: "[FIN_CARTAO_DET]",
+                                label: "CVV",
+                                marker: "[FINANCE]",
                               },
                               {
-                                label: "Valores Monetários",
-                                marker: "[FIN_VALOR_REAL]",
+                                label: "SWIFT bic",
+                                marker: "[FINANCE]",
                               },
                               { label: "IBAN", marker: "[FIN_IBAN]" },
                             ].map((item) => (
@@ -306,7 +309,7 @@ export default function DocsPage() {
                     </div>
 
                     {/* 3. Saúde (PHI) */}
-                    <div>
+                    {/* <div>
                       <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
                         <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
                         Saúde (PHI - HIPAA Compliance)
@@ -349,33 +352,159 @@ export default function DocsPage() {
                           </tbody>
                         </table>
                       </div>
-                    </div>
+                    </div> */}
 
-                    {/* 4. Tecnologia e Dados Técnicos */}
+
+
                     <div>
                       <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
-                        <div className="h-2 w-2 rounded-full bg-purple-500" />{" "}
-                        Tecnologia
+                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        Dados pessoais
                       </h3>
                       <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
                         <table className="w-full text-left text-sm">
                           <tbody className="divide-y divide-border/50">
                             {[
                               {
-                                label: "Chave API / Secret",
-                                marker: "[TECH_API_KEY]",
+                                label: "Nome",
+                                marker: "[PERSON]",
                               },
                               {
-                                label: "Endereços IP (V4/V6)",
-                                marker: "[TECH_IP_V4]",
+                                label: "Sobrenome",
+                                marker: "[PERSON]",
                               },
                               {
-                                label: "Tokens de Acesso",
-                                marker: "[TECH_ACCESS_TOKEN]",
+                                label: "Nome de empresa",
+                                marker: "[PERSON]",
                               },
                               {
-                                label: "Identificadores de Hardware",
-                                marker: "[TECH_DEVICE_ID]",
+                                label: "Nomes de usuário",
+                                marker: "[PERSON]",
+                              },
+                            ].map((item) => (
+                              <tr
+                                key={item.marker}
+                                className="hover:bg-primary/5 transition-colors"
+                              >
+                                <td className="px-4 py-3">{item.label}</td>
+                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                  {item.marker}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+
+                    {/* 3. Contato */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
+                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        Contato
+                      </h3>
+                      <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
+                        <table className="w-full text-left text-sm">
+                          <tbody className="divide-y divide-border/50">
+                            {[
+                              {
+                                label: "Telefone Fixo",
+                                marker: "[CONTACT]",
+                              },
+                              {
+                                label: "Celular",
+                                marker: "[CONTACT]",
+                              },
+                              {
+                                label: "E-mail",
+                                marker: "[CONTACT]",
+                              },
+                              {
+                                label: "@ Rede social",
+                                marker: "[CONTACT]",
+                              },
+                            ].map((item) => (
+                              <tr
+                                key={item.marker}
+                                className="hover:bg-primary/5 transition-colors"
+                              >
+                                <td className="px-4 py-3">{item.label}</td>
+                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                  {item.marker}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+                    {/* 3. Datas */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
+                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        Data / hora
+                      </h3>
+                      <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
+                        <table className="w-full text-left text-sm">
+                          <tbody className="divide-y divide-border/50">
+                            {[
+                              {
+                                label: "Data",
+                                marker: "[TIME]",
+                              },
+                              {
+                                label: "Hora",
+                                marker: "[TIME]",
+                              },
+                              {
+                                label: "Timestamp",
+                                marker: "[TIME]",
+                              },
+                            ].map((item) => (
+                              <tr
+                                key={item.marker}
+                                className="hover:bg-primary/5 transition-colors"
+                              >
+                                <td className="px-4 py-3">{item.label}</td>
+                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                  {item.marker}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    {/* 4. Localização */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
+                        <div className="h-2 w-2 rounded-full bg-purple-500" />{" "}
+                        Localização
+                      </h3>
+                      <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
+                        <table className="w-full text-left text-sm">
+                          <tbody className="divide-y divide-border/50">
+                            {[
+                              {
+                                label: "Endereço",
+                                marker: "[LOCATION]",
+                              },
+                              {
+                                label: "Cidade/Estado",
+                                marker: "[LOCATION]",
+                              },
+                              {
+                                label: "Coordenadas geográficas",
+                                marker: "[LOCATION]",
+                              },
+                              {
+                                label: "CEP / ZIP code",
+                                marker: "[LOCATION]",
                               },
                             ].map((item) => (
                               <tr
@@ -392,6 +521,54 @@ export default function DocsPage() {
                         </table>
                       </div>
                     </div>
+
+
+
+{/* Secret */}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
+                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        Chaves, segredos e tokens.
+                      </h3>
+                      <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
+                        <table className="w-full text-left text-sm">
+                          <tbody className="divide-y divide-border/50">
+                            {[
+                              {
+                                label: "API key",
+                                marker: "[SECRET]",
+                              },
+                              {
+                                label: "Access Token",
+                                marker: "[SECRET]",
+                              },
+                              {
+                                label: "Pin",
+                                marker: "[SECRET]",
+                              },
+                              {
+                                label: "Senhas",
+                                marker: "[SECRET]",
+                              },
+                            ].map((item) => (
+                              <tr
+                                key={item.marker}
+                                className="hover:bg-primary/5 transition-colors"
+                              >
+                                <td className="px-4 py-3">{item.label}</td>
+                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                  {item.marker}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+
+
                   </div>
 
                   <div className="mt-8 rounded-lg bg-secondary/20 p-4 border border-border/50 text-sm italic">
@@ -440,7 +617,7 @@ export default function DocsPage() {
                   <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 shadow-[0_0_20px_rgba(var(--primary),0.05)]">
                     <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
                       <Zap className="size-5 text-primary" /> Modo 2: Privacy
-                      Orchestrator (Recomendado)
+                      Orchestrator (Em desenvolvimento)
                     </h3>
                     <p className="text-sm mb-4">
                       A ISA retorna o texto limpo E um objeto JSON com o
@@ -469,28 +646,6 @@ export default function DocsPage() {
   }
 }`}
                         </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Modo 3: Reconstrução (De-anonymize) */}
-                  <div className="rounded-2xl border border-border bg-card p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Lock className="size-5 text-amber-400" /> Modo 3:
-                      Reconstrução Reversa
-                    </h3>
-                    <p className="text-sm mb-4">
-                      Recebe um texto tokenizado e o JSON original para
-                      reconstruir a mensagem final com segurança.
-                    </p>
-                    <div className="space-y-3">
-                      <div className="text-xs font-mono uppercase text-foreground">
-                        System Prompt sugerido:
-                      </div>
-                      <div className="bg-slate-900 p-3 rounded border border-white/5 text-sm font-mono text-amber-100/80">
-                        "Utilize o JSON fornecido para substituir os tokens no
-                        texto e reconstruir a mensagem original de forma
-                        íntegra."
                       </div>
                     </div>
                   </div>
@@ -709,14 +864,14 @@ export default function DocsPage() {
                     de recursos, seja usando Ollama, LM Studio ou VLLM. Verifique as instruções de como instalar um modelo customizado na sua plataforma de escolha.
                   </p>
 
-                  <Tabs defaultValue="ollama" className="w-full">
+                  {/* <Tabs defaultValue="ollama" className="w-full">
                     <TabsList className="grid w-full grid-cols-3 bg-secondary/50">
                       <TabsTrigger value="ollama">Ollama</TabsTrigger>
                       <TabsTrigger value="lmstudio">LM Studio</TabsTrigger>
                       <TabsTrigger value="vllm">vLLM (Server)</TabsTrigger>
                     </TabsList>
 
-                    {/* Setup Ollama */}
+                    
                     <TabsContent value="ollama" className="mt-4 space-y-4">
                       <div className="rounded-xl border border-border bg-card p-6">
                         <h3 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
@@ -751,7 +906,7 @@ export default function DocsPage() {
                       </div>
                     </TabsContent>
 
-                    {/* Setup LM Studio */}
+                    
                     <TabsContent value="lmstudio" className="mt-4 space-y-4">
                       <div className="rounded-xl border border-border bg-card p-6">
                         <h3 className="text-lg font-bold text-foreground mb-2 text-purple-400">
@@ -776,7 +931,7 @@ export default function DocsPage() {
                       </div>
                     </TabsContent>
 
-                    {/* Setup vLLM */}
+                    
                     <TabsContent value="vllm" className="mt-4 space-y-4">
                       <div className="rounded-xl border border-border bg-card p-6">
                         <h3 className="text-lg font-bold text-foreground mb-2 text-blue-400">
@@ -798,7 +953,7 @@ export default function DocsPage() {
                         </div>
                       </div>
                     </TabsContent>
-                  </Tabs>
+                  </Tabs> */}
 
                   {/* Requisitos de Hardware */}
                   <div className="mt-12 rounded-2xl border border-border bg-secondary/10 p-8">
@@ -811,7 +966,7 @@ export default function DocsPage() {
                         <div className="text-xs text-foreground uppercase font-bold">
                           RAM / VRAM
                         </div>
-                        <div className="text-lg font-semibold">~300 MB</div>
+                        <div className="text-lg font-semibold">~2GB</div>
                         <p className="text-[10px]">
                           Roda em qualquer PC moderno
                         </p>
@@ -820,7 +975,7 @@ export default function DocsPage() {
                         <div className="text-xs text-foreground uppercase font-bold">
                           Armazenamento
                         </div>
-                        <div className="text-lg font-semibold">512 MB</div>
+                        <div className="text-lg font-semibold">2GB</div>
                         <p className="text-[10px]">
                           Espaço em disco para o modelo
                         </p>
@@ -831,7 +986,7 @@ export default function DocsPage() {
                         </div>
                         <div className="text-lg font-semibold">ARM64 / x86</div>
                         <p className="text-[10px]">
-                          Suporte a Mac M1/M2/M3 e Intel
+                          Suporte a AMD, Apple M1/M2 e Intel
                         </p>
                       </div>
                     </div>
@@ -939,7 +1094,7 @@ export default function DocsPage() {
                           Aviso de Versão Beta
                         </h3>
                         <p className="text-sm leading-relaxed text-amber-200/70">
-                          A ISA está atualmente em <strong>v0.3.2-alfa</strong>.
+                          A ISA está atualmente em <strong>v0.5.2-alfa</strong>.
                           Como qualquer modelo probabilístico, existe uma
                           margem para falsos negativos (dados sensíveis
                           não detectados) ou falsos positivos.

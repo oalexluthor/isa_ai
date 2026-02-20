@@ -79,8 +79,8 @@ export function EnterpriseTrust() {
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-pretty text-lg text-muted-foreground">
-            Modelos de Linguagem são poderosos, mas famintos por dados. A ISA
-            garante que a inteligência corporativa permaneça dentro do seu perímetro.
+            Modelos de Linguagem são poderosos, mas não sabem a diferença entre um dado sensível e outro que não é. Além disso, são vulneráveis a ataques de engenharia de prompt e podem expôr esses dados, podendo causar prejuízos financeiros e jurídicos. <br/> <br/>
+              A missão da ISA é ser um escudo para que a sua inteligência corporativa e seus dados sensíveis permaneçam dentro do perímetro da rede da sua empresa.
           </p>
         </div>
 
@@ -164,7 +164,7 @@ export function EnterpriseTrust() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 flex justify-center">
+        {/* <div className="mt-16 flex justify-center">
           <a
             href="#"
             className="group inline-flex items-center gap-3 rounded-xl border border-border/50 bg-secondary/50 px-6 py-4 transition-all duration-300 hover:border-primary/30 hover:bg-secondary"
@@ -182,7 +182,12 @@ export function EnterpriseTrust() {
             </div>
             <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
           </a>
+        </div> */}
+        <div className="mt-16 rounded-xl border border-amber-600/70 bg-amber-500/10 p-6 text-center">
+          <p><span className="font-semibold text-amber-100 text-xl">ISA ainda é um trabalho EM DESENVOLVIMENTO.</span> </p>
+            <p>Devido a isso, seus resultados podem não ser consistentes, às vezes pode alucinar, deixar algum dado sensível passar ou então identificar erroneamente um tipo de dado sensível. <br/> Seu treinamento está sendo constantemente aprimorado, mas no momento ela ainda é considerada <b>INSTÁVEL</b> e não é recomendada para cenários de produção.</p>
         </div>
+
       </div>
     </section>
   )

@@ -5,8 +5,8 @@ const benefits = [
     icon: Cpu,
     title: "Ultra-Leve",
     description:
-      "Com apenas 270M de parâmetros (baseado em Gemma 3), a ISA roda com eficiência em CPU e dispositivos de borda. Sem necessidade de GPU.",
-    highlight: "270M params",
+      "Baseado em Gemma 3, a ISA roda com eficiência em CPU e dispositivos de borda. Sem necessidade de GPU.",
+    highlight: "270M / 1B params",
   },
   {
     icon: Blocks,

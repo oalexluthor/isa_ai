@@ -123,19 +123,20 @@ export function Benchmarks() {
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Por que{" "}
             <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
-              270M de Parâmetros
+              270M / 1B de Parâmetros
             </span>
             ?
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            O equilíbrio ideal entre a velocidade de um Regex e a inteligência de uma LLM. 
-            Latência ultra-baixa para aplicações em tempo real.
+          <p className="mx-auto max-w-2xl text-foreground">
+            Um dos maiores gargalos de aplicações com IA são a latência e alto consumo de recursos computacionais. Usar um modelo pequeno e especializado em apenas uma tarefa representa o equilíbrio ideal entre a velocidade de um Regex e a inteligência de uma LLM. <br /><br />
+            O projeto ISA nasceu com a ambição de ser uma ferramenta aberta e de uso corporativo, com latência ultra-baixa para aplicações em tempo real. Por isso, estamos testando versões de 270M e 1B de parâmetros para atingir esse objetivo.
           </p>
         </div>
 
-        {/* Benchmark Cards Grid */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {/* Latency Card */}
+        {/* Benchmark Cards Grid  alterar para cols-3 quando a acurácia estiver melhor*/}
+        {/* Latency Card */}
+        {/* <div className="grid gap-6 md:grid-cols-2">
+          
           <BenchmarkCard
             icon={<Zap className="h-5 w-5" />}
             title="Latência"
@@ -169,39 +170,7 @@ export function Benchmarks() {
             />
           </BenchmarkCard>
 
-          {/* Accuracy Card */}
-          <BenchmarkCard
-            icon={<Brain className="h-5 w-5" />}
-            title="Precisão Contextual"
-            description="Quanto maior, melhor"
-            isVisible={isVisible}
-          >
-            <BenchmarkBar
-              label="ISA (270M)"
-              value={96}
-              maxValue={100}
-              displayValue="96%"
-              isHero
-              isVisible={isVisible}
-              delay={300}
-            />
-            <div className="pt-1 text-[10px] uppercase tracking-wider font-bold text-primary/80">
-              Detecta contexto, não apenas padrões
-            </div>
-            <BenchmarkBar
-              label="Baseado em Regras (Regex)"
-              value={55}
-              maxValue={100}
-              displayValue="55%"
-              isVisible={isVisible}
-              delay={500}
-            />
-            <div className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground/60">
-              Falha em erros de digitação e variações
-            </div>
-          </BenchmarkCard>
-
-          {/* Hardware Card */}
+          
           <BenchmarkCard
             icon={<Cpu className="h-5 w-5" />}
             title="Requisitos de Hardware"
@@ -229,12 +198,12 @@ export function Benchmarks() {
               </div>
             </div>
           </BenchmarkCard>
-        </div>
+        </div> */}
 
         {/* Footnote */}
-        <p className="mt-8 text-center text-xs text-muted-foreground/60 italic">
+        {/* <p className="mt-8 text-center text-xs text-muted-foreground/60 italic">
           * Testes realizados em CPU padrão (Equivalente a Apple M1 Air 8GB). Resultados de LLMs locais usando Ollama (Q4_K_M).
-        </p>
+        </p> */}
       </div>
     </section>
   )

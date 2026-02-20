@@ -36,8 +36,8 @@ export function Hero() {
 
         {/* Subheadline */}
         <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          ISA é um Guardrail de IA ultra-leve{" "}
-          <span className="font-mono text-primary">(270M)</span> que anonimiza
+          ISA é um Guardrail de IA leve{" "} que anonimiza
+          {/* <span className="font-mono text-primary">(270M)</span>  */}
           dados sensíveis localmente antes mesmo de saírem da sua infraestrutura.
         </p>
 
@@ -57,9 +57,9 @@ export function Hero() {
             asChild
             size="lg"
             variant="outline"
-            className="gap-2 border-border bg-transparent text-foreground transition-all hover:border-primary/50 hover:bg-primary/5"
+            className="gap-2 border-border bg-transparent text-foreground transition-all hover:border-primary/50 hover:bg-primary/5 hover:text-foreground"
           >
-            <a href="#download">
+            <a href="https://huggingface.co/AlexLuthor/isa-v0.5.2/tree/main">
               <Download className="h-5 w-5" />
               Baixar GGUF/LoRA
             </a>
@@ -69,7 +69,7 @@ export function Hero() {
         {/* Stats */}
         <div className="mt-16 flex flex-wrap items-center justify-center gap-8 border-t border-border/50 pt-8 md:gap-16">
           <div className="text-center">
-            <div className="text-3xl font-bold text-foreground">270M</div>
+            <div className="text-3xl font-bold text-foreground">270M / 1B</div>
             <div className="text-sm text-muted-foreground">Parâmetros</div>
           </div>
           <div className="text-center">

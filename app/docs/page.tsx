@@ -402,7 +402,7 @@ export default function DocsPage() {
                     {/* 3. Contato */}
                     <div>
                       <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
-                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        <div className="h-2 w-2 rounded-full bg-cyan-500" />{" "}
                         Contato
                       </h3>
                       <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
@@ -431,7 +431,7 @@ export default function DocsPage() {
                                 className="hover:bg-primary/5 transition-colors"
                               >
                                 <td className="px-4 py-3">{item.label}</td>
-                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                <td className="px-4 py-3 text-right font-mono text-cyan-400 font-bold">
                                   {item.marker}
                                 </td>
                               </tr>
@@ -445,7 +445,7 @@ export default function DocsPage() {
                     {/* 3. Datas */}
                     <div>
                       <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
-                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        <div className="h-2 w-2 rounded-full bg-orange-500" />{" "}
                         Data / hora
                       </h3>
                       <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
@@ -470,7 +470,7 @@ export default function DocsPage() {
                                 className="hover:bg-primary/5 transition-colors"
                               >
                                 <td className="px-4 py-3">{item.label}</td>
-                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                <td className="px-4 py-3 text-right font-mono text-orange-400 font-bold">
                                   {item.marker}
                                 </td>
                               </tr>
@@ -527,7 +527,7 @@ export default function DocsPage() {
 {/* Secret */}
                     <div>
                       <h3 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
-                        <div className="h-2 w-2 rounded-full bg-rose-500" />{" "}
+                        <div className="h-2 w-2 rounded-full bg-yellow-500" />{" "}
                         Chaves, segredos e tokens.
                       </h3>
                       <div className="overflow-hidden rounded-xl border border-border bg-secondary/10">
@@ -556,7 +556,7 @@ export default function DocsPage() {
                                 className="hover:bg-primary/5 transition-colors"
                               >
                                 <td className="px-4 py-3">{item.label}</td>
-                                <td className="px-4 py-3 text-right font-mono text-rose-400 font-bold">
+                                <td className="px-4 py-3 text-right font-mono text-yellow-400 font-bold">
                                   {item.marker}
                                 </td>
                               </tr>
